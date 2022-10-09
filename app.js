@@ -23,6 +23,9 @@ form.addEventListener('submit', async (e) => {
         }
     });
 
+    // 顯示 info
+    info.classList.remove('d-none');
+    
     // 撈出需要的基本 data
     const data = res.data.records.location[0];
 
@@ -44,8 +47,7 @@ form.addEventListener('submit', async (e) => {
     const period = data.weatherElement[0].time[0];
     selectedTime.innerHTML = `${period.startTime} ~ ${period.endTime}`
 
-    // 顯示 info
-    info.classList.remove('d-none');
+    
 
 
     console.log(forcast)
