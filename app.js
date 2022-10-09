@@ -1,6 +1,7 @@
 // 天氣 API
 const city = document.querySelector('#cityDropdown');
 const form = document.querySelector('#selectForm');
+const info = document.querySelector('#information');
 const selectedCity = document.querySelector('h2');
 const selectedTime = document.querySelector('h3');
 const elValue = document.querySelectorAll('span');
@@ -37,11 +38,15 @@ form.addEventListener('submit', async (e) => {
     }
 
     // 地點 DOM
-    selectedCity.innerHTML = data.locationName;
+    selectedCity.innerHTML = `［${data.locationName}］`;
 
     // 時間 DOM
     const period = data.weatherElement[0].time[0];
     selectedTime.innerHTML = `${period.startTime} ~ ${period.endTime}`
+
+    // 顯示 info
+    info.classList.remove('d-none');
+
 
     console.log(forcast)
 });
