@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>天氣預報</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <script src="https://cdn.jsdelivr.net/npm/tw-city-selector@2.1.1/dist/tw-city-selector.min.js"></script>
+    <script>
+        new TwCitySelector({
+            el: '.city-selector',
+            elCounty: '.county',
+            standardWords: true,
+        });
+    </script>
+</head>
+
+<body>
+    <h1>天氣預報</h1>
+
+    <form action="/" method="GET" id="selectForm">
+        <!-- 縣市選單 -->
+        <select class="city-selector-set county" id="cityDropdown"></select>
+        <button>確認</button>
+    </form>
+
+    <h2></h2>
+    <h3></h3>
+    <ul>
+        <li id="Wx"><span></span></li>
+        <li id="Pop">降雨機率：<span></span>%</li>
+        <li id="MinT">最低溫度：<span> </span>°C</li>
+        <li id="CI">體感：<span></span></li>
+        <li id="MaxT">最高溫度：<span></span>°C</li>
+    </ul>
+    <button>next</button>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
