@@ -90,5 +90,3 @@ function DOM(data) {
     // 顯示 info
     info.classList.remove('d-none');
 }
-
-
