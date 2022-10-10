@@ -33,7 +33,11 @@ form.addEventListener('change', async () => {
             const data = res.data.records.location[0];
 
             // 將 data 代入 dom()
-            DOM(data);
+            await DOM(data);
+
+            // 顯示 info
+            info.classList.remove('d-none');
+            
         } else {
             info.classList.add('d-none');
         }
@@ -88,12 +92,9 @@ function DOM(data) {
     selectedCity.innerHTML = data.locationName;
 
 
-    
+
     // 依據所選的區間改變該時段的天氣因子
     time.addEventListener('change', function () {
         DisplayWeatherEl();
     })
-
-    // 顯示 info
-    info.classList.remove('d-none');
 }
